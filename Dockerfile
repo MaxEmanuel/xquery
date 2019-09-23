@@ -1,5 +1,5 @@
-FROM base
-MAINTAINER Henrik Mühe <henrik.muehe@gmail.com>
+FROM ubuntu:16.04
+MAINTAINER Maximilian Schuele <m.schuele@tum.de>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
@@ -16,22 +16,14 @@ RUN cd /tmp ; dpkg -i /fuse.deb
 
 # Fake upstart
 RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -s /bin/true /sbin/initctl
 
 # Install basex
-RUN apt-get -y install basex
-
 # Install node
-RUN apt-get -y install software-properties-common python-software-properties python g++ make
-RUN add-apt-repository -y ppa:chris-lea/node.js
-RUN apt-get update
-RUN apt-get -y install nodejs
+RUN apt-get -y install software-properties-common python-software-properties python g++ make nodejs basex npm
 
 # Install src and modules
 ADD . /src
-RUN cd /src ; npm install
-RUN cd /src ; ./node_modules/jamjs/bin/jam.js install
-RUN cd /src ; make
+RUN cd /src && npm install && ln -s /usr/bin/nodejs /usr/bin/node && ./node_modules/jamjs/bin/jam.js install && make
 
 # Run
 EXPOSE 8080

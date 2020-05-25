@@ -6,10 +6,10 @@
   "dependencies": {
     "connect": "*",
     "express": "3.x",
-    "jade": "*",
+    "pug": "*",
     "coffee-script": "*",
     "requirejs": "*",
-    "jamjs": "*",
+    "require": "*",
     "nodemon": "*",
     "temp": "*"
   },

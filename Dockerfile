@@ -1,30 +1,21 @@
 FROM ubuntu:16.04
 MAINTAINER Maximilian Schuele <m.schuele@tum.de>
 
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update
-
-# Fake a fuse install
-RUN apt-get install libfuse2
-RUN cd /tmp ; apt-get download fuse
-RUN cd /tmp ; dpkg-deb -x fuse_* .
-RUN cd /tmp ; dpkg-deb -e fuse_*
-RUN cd /tmp ; rm fuse_*.deb
-RUN cd /tmp ; echo -en '#!/bin/bash\nexit 0\n' > DEBIAN/postinst
-RUN cd /tmp ; dpkg-deb -b . /fuse.deb
-RUN cd /tmp ; dpkg -i /fuse.deb
-
-# Fake upstart
-RUN dpkg-divert --local --rename --add /sbin/initctl
-
-# Install basex
-# Install node
-RUN apt-get -y install software-properties-common python-software-properties python g++ make nodejs basex npm
+# Install node and some tools
+RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop g++ make basex && ln -s /usr/bin/nodejs /usr/bin/node
 
 # Install src and modules
 ADD . /src
-RUN cd /src && npm install && ln -s /usr/bin/nodejs /usr/bin/node && ./node_modules/jamjs/bin/jam.js install && make
+RUN cd /src/ && npm install
+RUN cd /src/ && make 
+RUN cd /src/ && make install
+
+# Run rest as non root user
+RUN useradd -ms /bin/bash xquery
+USER xquery
+WORKDIR /home/xquery
 
 # Run
 EXPOSE 8080
+ENV TERM=xterm
 CMD ["/src/startup.sh"]

@@ -6,6 +6,7 @@ fs = require('fs')
 app = express()
 app.use express.static 'public'
 app.use express.bodyParser()
+app.use("/bower", express.static('bower_components'));
 app.use app.router
 
 app.post '/execute', (req,res)=>

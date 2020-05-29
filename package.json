@@ -4,27 +4,33 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "connect": "*",
     "express": "3.x",
-    "pug": "*",
+    "express-validator" : "3.x",
+    "body-parser": "*",
+    "jade": "*",
     "coffee-script": "*",
+    "nodemon": "*",
+    "bower": "*",
+    "connect": "*",
+    "pug": "*",
     "requirejs": "*",
     "require": "*",
-    "nodemon": "*",
+    "codemirror": "*",
     "temp": "*"
   },
-  "jam": {
-    "packageDir": "public/jam",
+  "bower": {
+    "packageDir": "public/bower",
     "baseUrl": "public",
     "dependencies": {
       "require": null,
       "jquery": null,
       "jquery-cookie": null,
       "jquery-ui": null,
-      "bootstrap-jam": null,
+      "bootstrap": null,
       "underscore": null,
       "director": null,
       "font-awesome": null,
+      "codemirror": "*",
       "codemirror3": null,
       "highlight": null
     }

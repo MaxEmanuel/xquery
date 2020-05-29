@@ -6,9 +6,7 @@ RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop g++
 
 # Install src and modules
 ADD . /src
-RUN cd /src/ && npm install
-RUN cd /src/ && make 
-RUN cd /src/ && make install
+RUN cd /src/ && npm install && make && make install
 
 # Run rest as non root user
 RUN useradd -ms /bin/bash xquery

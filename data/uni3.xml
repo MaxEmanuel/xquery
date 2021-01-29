@@ -1,0 +1,188 @@
+<university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uniName="Virtual university of the great philosophers" xsi:noNamespaceSchemaLocation="uni.xsd">
+  <uniDirectors>
+    <president>Prof. Sokrates</president>
+    <chancellor>Dr. Erhard</chancellor>
+  </uniDirectors>
+  <faculties>
+    <faculty>
+      <facultyName>Theology</facultyName>
+      <professor ID="P2134" persNr="P2134">
+        <name>Augustinus</name>
+        <rank>C3</rank>
+        <room>309</room>
+        <lectures>
+          <lecture ID="V5022" lectureNr="V5022">
+            <titel>Faith and knowledge</titel>
+            <sws>2</sws>
+          </lecture>
+        </lectures>
+        <assistants>
+          <assistant ID="P3007" persNr="P3007">
+            <name>Spinoza</name>
+            <specialisedField>God and nature</specialisedField>
+          </assistant>
+        </assistants> 
+      </professor>
+    </faculty>
+    <faculty>
+      <facultyName>Physics</facultyName>
+      <professor ID="P2136" persNr="P2136">
+        <name>Curie</name>
+        <rank>C4</rank>
+        <room>36</room>
+      </professor>
+      <professor ID="P2127" persNr="P2127">
+        <name>Kopernikus</name>
+        <rank>C3</rank>
+        <room>310</room>
+        <assistants>
+          <assistant ID="P3005" persNr="P3005">
+            <name>Rhetikus</name>
+            <specialisedField>Planetary motion</specialisedField>
+          </assistant>
+          <assistant ID="P3006" persNr="P3006">
+            <name>Newton</name>
+            <specialisedField>Kepler's laws</specialisedField>
+          </assistant>
+        </assistants>
+      </professor>
+    </faculty>
+    <faculty>
+      <facultyName>Philosophy</facultyName>
+      <professor ID="P2125" persNr="P2125">
+        <name>Sokrates</name>
+        <rank>C4</rank>
+        <room>226</room>
+        <lectures>
+          <lecture ID="V5041" lectureNr="V5041" requirements="V5001">
+            <titel>ethics</titel>
+            <sws>4</sws>
+          </lecture>
+          <lecture ID="V5049" lectureNr="V5049" requirements="V5001">
+            <titel>Maieutics</titel>
+            <sws>2</sws>
+          </lecture>
+          <lecture ID="V4052" lectureNr="V4052">
+            <titel>Logic</titel>
+            <sws>4</sws>
+          </lecture>
+        </lectures>
+        <assistants>
+          <assistant ID="P3002" persNr="P3002">
+            <name>Platon</name>
+            <specialisedField>Ideology</specialisedField>
+          </assistant>
+          <assistant ID="P3003" persNr="P3003">
+            <name>Aristoteles</name>
+            <specialisedField>Syllogistic</specialisedField>
+          </assistant>
+        </assistants>
+      </professor>
+      <professor ID="P2126" persNr="P2126">
+        <name>Russel</name>
+        <rank>C4</rank>
+        <room>232</room>
+        <lectures>
+          <lecture ID="V5043" lectureNr="V5043" requirements="V5001">
+            <titel>Theory of cognition</titel>
+            <sws>3</sws>
+          </lecture>
+          <lecture ID="V5052" lectureNr="V5052" requirements="V5043 V5041">
+            <titel>Philosophy of science</titel>
+            <sws>3</sws>
+          </lecture>
+        </lectures>
+        <assistants>
+          <assistant ID="P3004" persNr="P3004">
+            <name>Wittgenstein</name>
+            <specialisedField>Language theory</specialisedField>
+          </assistant>
+        </assistants>
+      </professor>
+      <professor ID="P2133" persNr="P2133">
+        <name>Popper</name>
+        <rank>C3</rank>
+        <room>52</room>
+        <lectures>
+          <lecture ID="V5259" lectureNr="V5259" requirements="V5052">
+            <titel>The Vienna Circle</titel>
+            <sws>2</sws>
+          </lecture>
+        </lectures>
+      </professor>
+      <professor ID="P2137" persNr="P2137">
+        <name>Kant</name>
+        <rank>C4</rank>
+        <room>7</room>
+        <lectures>
+          <lecture ID="V5001" lectureNr="V5001">
+            <titel>Fundamentals</titel>
+            <sws>4</sws>
+          </lecture>
+          <lecture ID="V5216" lectureNr="V5216" requirements="V5041">
+            <titel>Bioethics</titel>
+            <sws>2</sws>
+          </lecture>
+          <lecture ID="V4630" lectureNr="V4630">
+            <titel>The 3 Critiques</titel>
+            <sws>4</sws>
+          </lecture>
+        </lectures>
+      </professor>
+    </faculty>
+  </faculties>
+  <students>
+    <student ID="M24002" matrNr="M24002">
+      <name>Xenokrates</name>
+      <semester>18</semester>
+    </student>
+    <student ID="M25403" matrNr="M25403">
+      <name>Jonas</name>
+      <semester>12</semester>
+      <attends lectures="V5022"/>
+      <exams>
+        <exam examiner="P2125" lecture="V5041" grade="2.0"/>
+      </exams>
+    </student>
+    <student ID="M26120" matrNr="M26120">
+      <name>Fichte</name>
+      <semester>10</semester>
+      <attends lectures="V5001"/>
+    </student>
+    <student ID="M26830" matrNr="M26830">
+      <name>Aristoxenos</name>
+      <semester>8</semester>
+    </student>
+    <student ID="M27550" matrNr="M27550">
+      <name>Schopenhauer</name>
+      <semester>6</semester>
+      <attends lectures="V5001 V4052"/>
+      <exams>
+        <exam examiner="P2137" lecture="V4630" grade="2.0"/>
+      </exams>
+    </student>
+    <student ID="M28106" matrNr="M28106">
+      <name>Carnap</name>
+      <semester>3</semester>
+      <attends lectures="V5041 V5052 V5216 V5259"/>
+      <exams>
+        <exam examiner="P2126" lecture="V5001" grade="1.0"/>
+      </exams>
+    </student>
+    <student ID="M29120" matrNr="M29120">
+      <name>Theophrastos</name>
+      <semester>2</semester>
+      <attends lectures="V5001 V5041 V5049"/>
+    </student>
+    <student ID="M29555" matrNr="M29555">
+      <name>Feuerbach</name>
+      <semester>2</semester>
+      <attends lectures="V5001 V5022"/>
+    </student>
+    <student ID="M1337" matrNr="M1337">
+      <name>1337</name>
+      <semester>9</semester>
+      <attends lectures="V5022 V5041 V5049 V4052 V5043 V5052 V5259 V5001 V5216 V4630"/>
+    </student>
+  </students>
+</university>

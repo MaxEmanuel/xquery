@@ -1,8 +1,10 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Maximilian Schuele <m.schuele@tum.de>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # Install node and some tools
-RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop g++ make basex && ln -s /usr/bin/nodejs /usr/bin/node
+RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop g++ make basex openjdk-11-jdk libjing-java libxml-commons-resolver1.1-java libjline-java
 
 # Install src and modules
 ADD . /src
